@@ -16,8 +16,9 @@ def post():
     alertid = request.json['alertid']
     userif = request.json['userid']
     alertprice = request.json['alertprice']
+    status = request.json['status']
     
-    alert = Alerts(alertid, userid, alertprice)
+    alert = Alerts(alertid, userid, alertprice, status)
     db.session.add(alert)
     db.session.commit()
 
