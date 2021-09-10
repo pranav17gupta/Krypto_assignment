@@ -10,7 +10,7 @@ app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app) 
 ma = Marshmallow(app)
 
-/*fetching all the alerts with status*/
+/*fetching all the alerts with status if no alertid is appended at URL but fetching selected alerts if alertid is appended*/
 @staticmethod
 def fetchAllAlerts():
     try: id = request.args['alertid']
