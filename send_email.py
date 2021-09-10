@@ -4,9 +4,10 @@ import smtp
 @staticmethod
 def sendEmail(userid, crypto, price):
   sender_email = "pranavtest123@rabbitmq.co.in"
-  rec_email = email
+  user = Users.query.get(userid)
+  rec_email = user.email
   password = "test123";
-  message = "Hii, " + userid + "\nAlert!! current price of " + crypto + " reaches to " + price
+  message = "Hii, " + user.username + "\nAlert!! current price of " + crypto + " reaches to " + price
   
   server = smtp.SMTP(rabbitmq@SERVER-IP)
   server.starttls()
